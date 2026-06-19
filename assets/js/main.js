@@ -6,8 +6,17 @@ document.addEventListener("DOMContentLoaded", function() {
 
     if (mobileBtn && navList) {
         mobileBtn.addEventListener("click", function() {
-            this.classList.toggle("active");
-            navList.classList.toggle("active");
+            const isActive = this.classList.toggle("active");
+            navList.classList.toggle("active", isActive);
+            this.setAttribute("aria-expanded", String(isActive));
+        });
+
+        navList.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", function() {
+                mobileBtn.classList.remove("active");
+                navList.classList.remove("active");
+                mobileBtn.setAttribute("aria-expanded", "false");
+            });
         });
     }
 
