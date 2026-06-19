@@ -6,6 +6,7 @@
     --primary-light: rgba(0, 102, 255, 0.12);
     --bg-dark: #111111;
     --bg-darker: #0a0a0a;
+    --bg-subtle: #141416;
     --bg-card: rgba(39, 39, 42, 0.52);
     --text-light: #f3f4f6;
     --text-gray: #9ca3af;
@@ -191,7 +192,7 @@ textarea:focus-visible {
 .hero {
     position: relative;
     overflow: hidden;
-    padding: 7rem 0;
+    padding: 8rem 0 7.5rem;
     background: linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-darker) 100%);
     text-align: center;
 }
@@ -253,19 +254,38 @@ textarea:focus-visible {
 .about,
 .skills,
 .projects-page {
-    padding: 6rem 0;
+    padding: 7.25rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.035);
 }
 
 .bg-darker,
 .services,
 .contact,
 .skills {
-    background: var(--bg-darker);
+    background:
+        linear-gradient(180deg, rgba(0, 102, 255, 0.035), transparent 26rem),
+        var(--bg-darker);
+}
+
+.pricing,
+.about,
+.projects-page {
+    background:
+        radial-gradient(circle at top right, rgba(0, 102, 255, 0.08), transparent 24rem),
+        var(--bg-subtle);
+}
+
+.services {
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), inset 0 -1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.contact {
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
 .section-title {
     max-width: 760px;
-    margin: 0 auto 3.5rem;
+    margin: 0 auto 4.25rem;
     text-align: center;
 }
 
@@ -277,7 +297,7 @@ textarea:focus-visible {
 }
 
 .section-title p {
-    margin-top: 1rem;
+    margin-top: 1.15rem;
     font-size: 1.08rem;
 }
 
@@ -287,7 +307,7 @@ textarea:focus-visible {
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+    gap: 2.25rem;
 }
 
 .service-card,
@@ -444,8 +464,11 @@ textarea:focus-visible {
 }
 
 .cta {
-    padding: 5rem 0;
-    background: var(--bg-darker);
+    padding: 6.5rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.035);
+    background:
+        linear-gradient(135deg, rgba(0, 102, 255, 0.14), rgba(52, 211, 153, 0.06)),
+        var(--bg-darker);
     text-align: center;
 }
 
@@ -462,7 +485,7 @@ textarea:focus-visible {
 .page-header {
     position: relative;
     overflow: hidden;
-    padding: 6rem 0 4rem;
+    padding: 7rem 0 5rem;
     background: linear-gradient(180deg, var(--bg-dark), var(--bg-darker));
     text-align: center;
 }
@@ -508,8 +531,8 @@ textarea:focus-visible {
 .about-stats {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-    margin-top: 2rem;
+    gap: 1.25rem;
+    margin-top: 2.5rem;
 }
 
 .stat-item {
@@ -593,13 +616,13 @@ textarea:focus-visible {
 .contact-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    gap: 3.5rem;
 }
 
 .contact-items {
     display: grid;
-    gap: 1rem;
-    margin-top: 2rem;
+    gap: 1.15rem;
+    margin-top: 2.25rem;
 }
 
 .contact-item {
@@ -628,12 +651,12 @@ a.contact-item:hover {
 }
 
 .contact-form {
-    padding: 2rem;
+    padding: 2.25rem;
 }
 
 .form {
     display: grid;
-    gap: 1rem;
+    gap: 1.15rem;
 }
 
 .form-group {
@@ -868,7 +891,23 @@ a.contact-item:hover {
     .about,
     .skills,
     .projects-page {
-        padding: 4rem 0;
+        padding: 4.75rem 0;
+    }
+
+    .section-title {
+        margin-bottom: 3rem;
+    }
+
+    .services-grid,
+    .pricing-grid,
+    .skills-grid,
+    .projects-grid {
+        gap: 1.5rem;
+    }
+
+    .contact-grid,
+    .contact-container {
+        gap: 2.25rem;
     }
 
     .hero-logo {
@@ -886,7 +925,7 @@ a.contact-item:hover {
     .service-card,
     .skill-category,
     .project-info {
-        padding: 1.5rem;
+        padding: 1.65rem;
     }
 }
 
